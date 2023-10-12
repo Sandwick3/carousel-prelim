@@ -1,0 +1,46 @@
+/* Carousel Styles */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  margin-top: 5em;
+  border-radius: 0.4em;
+  box-shadow: 0.5em 5px 5em rgba(0, 0, 0, 0.103);
+  max-width: 900px; /* Set your desired carousel width */
+  border: .5px solid #d6d6d6; /* Add a border to the entire carousel */
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: #ffffff00;
+  font-size: large;
+}
+
+.desc{
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color: #ffffff00;
+}
+
+.carousel-item {
+  min-width: 200%;
+  height: 20em;
+  padding: 20px; /* Add padding to each item */
+  box-sizing: border-box; /* Include padding in width calculation */
+  background-color: #ffffff; /* Background color for each item */
+  text-align: center; /* Center-align text content */
+}
+
+.active {
+  transform: scale(1.1);
+  background-color: #fff; /* Background color for the active item */
+}
