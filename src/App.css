@@ -1,46 +1,125 @@
 /* Carousel Styles */
 .carousel {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  overflow: hidden;
-  margin-top: 5em;
-  border-radius: 0.4em;
-  box-shadow: 0.5em 5px 5em rgba(0, 0, 0, 0.103);
+  margin: 10em auto; /* Center the carousel horizontally */
   max-width: 900px; /* Set your desired carousel width */
-  border: .5px solid #d6d6d6; /* Add a border to the entire carousel */
+  border: 0.5px solid #c7c7c7;
+  border-radius: 0.8em;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.117);
 }
 
-.app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.postxt{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(162, 126, 255);
+  font-size: large;
+  margin-top: 0px;
 }
+
 
 .text {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
   background-color: #ffffff00;
-  font-size: large;
+  font-size:x-large;
+  padding: 0;
 }
 
-.desc{
-  font-size: small;
+.desc {
+  font-size: x-large;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
+  display: inline;
+  
   background-color: #ffffff00;
 }
 
+/* Styles for the carousel container */
+.carousel-container {
+  width: 400px; /* Set your desired item width */
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  transition: transform 0.1s;
+}
+
+/* Styles for the carousel item */
 .carousel-item {
-  min-width: 200%;
-  height: 20em;
-  padding: 20px; /* Add padding to each item */
+  min-width: 100%;
+  padding: 1px; /* Add padding to each item */
   box-sizing: border-box; /* Include padding in width calculation */
   background-color: #ffffff; /* Background color for each item */
   text-align: center; /* Center-align text content */
+  transform: translateX(0);
+  opacity: 0;
+  position: absolute;
+  transition: transform 0s, opacity 0.4s;
 }
 
-.active {
-  transform: scale(1.1);
-  background-color: #fff; /* Background color for the active item */
+.carousel-item.active {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 1;
+  position: relative;
+}
+
+/* Styles for arrow buttons */
+.prev,
+.next {
+  font-weight: bolder;
+  background-color: #8dad00;
+  color: #00237a;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 2em;
+  box-shadow: 0 0 0 2px #be63ff; /* Hide any content that overflows the circle */
+
+}
+
+.random{
+  margin-top: 2em;
+  font-size: larger;
+  font-weight: 600;
+  background-color:rgb(217, 202, 255);
+  color: #00237a;
+  border: 2px red;
+  border-radius: 2em;
+  height: 4em;
+  width: 10em;
+  font-size: larger;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0;
+}
+
+
+.prev {
+  border-radius: 50em;
+  left: -5em;
+  top: 3.8em;
+  height: 3.5em;
+  z-index: 0;
+}
+
+.next {
+  border-radius: 50em;
+  top: -1.5em;
+  right: -5em;
+  height: 3.5em;
+  z-index: 0;
+}
+
+.circular-photo {
+  margin-top: 2em;
+  border-radius: 50%; /* Create a circular shape by setting border-radius to 50% */
+  overflow: hidden;
+  border: 5px;
+  width: 80%; /* Make the image fill the circular container */
+  height: 80%; /* Make the image fill the circular container */
+  object-fit: cover;
+  box-shadow: 0 0 0 5px #be63ff; /* Hide any content that overflows the circle */
 }
